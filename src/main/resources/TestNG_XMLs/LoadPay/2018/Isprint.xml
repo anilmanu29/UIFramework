@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sprint I Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+    <suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>            
+	 </suite-files>
+   
+	<test name="I Sprint Test Cases" preserve-order="true">
+		 <classes>
+		    
+<!-- 		    Using dynamic data, we only need to setup data ONCE for the following: -->
+<!-- 			AdminLogin based on environment (QA vs Stage) -->
+<!-- 			outlookLoginData Credentials - use your own -->
+<!-- 		    BrokerRegister (broker@loadpaytest.truckstop.com) -->
+<!-- 		    CarrierRegister (carrier@loadpaytest.truckstop.com) -->
+<!-- 		    BrokerNewPayment (3 rows of data to any carrier...with dynamic data set to true, it will go to the carrier above) -->
+<!-- 		    BrokerPaymentForUnmatchedCarrier (2 rows of data)-->
+			
+		<!--   Script for Jira Tickets LP-3474 & LP-5413  CarrierWireTransferTest & CarrierPayMeNowTabTest -->
+		  	<class name="testcases.loadpay.carrier.CarrierNotificationTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierWireTransferTest"></class>
+
+		<!--   Script for Jira Tickets LP-5411 & LP-5417 CarrierSameDayACHTest &  CarrierNextDayACHTest     -->
+			<class name="testcases.loadpay.carrier.CarrierSameDayACHTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierNextDAYACHTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierPayMeNowTabTest"></class>
+				
+		<!--   Script for Jira Tickets LP-5421 UnmatchedCarrier-SAMEDAYACH       -->
+			<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+	        <class name="testcases.loadpay.unmatched.UnmatchedCarrierRegistrationTest"></class> 
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyTest"></class>
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminTest"></class>
+			<class name="testcases.loadpay.carrier.CarrierFirstLoginTest"></class>	
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierSameDayACHTest"></class>
+		 	
+		<!--   Script for Jira Tickets LP-5419 UnmatchedCarrier-WIRETRASFER    -->
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierWireTransferTest"></class>
+	
+		</classes>
+	</test>
+</suite>

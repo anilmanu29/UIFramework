@@ -1,0 +1,6 @@
+CarrierDOT*,CarrierMC,CarrierEmailaddress*,OriginationCountry,OriginationCity,OriginationState,OriginationZip,DestinationCountry,DestinationCity,DestinationState,DestinationZip,PickupDate,DeliveryDate,PaymentDate*,InvoiceDate*,TrailerType,LoadNumber*,PaymentAmount*,CarrierInvoice*,NumberOfStops,Commodity,Miles,Length,Width,Height,Weight,FuelSurcharge,CompanyName*,Memo
+,,carrier123@loadpaytest.truckstop.com,USA,Chicago,IL,61060,USA,Dallas,Tx,54894,05-04-2018,06-03-2018,07-10-2019,07-10-2019,Flatbed (DAT),101,100,101,,,,,,,,,JG Test,
+,,carrier123@loadpaytest.truckstop.com,USA,Chicago,IL,61060,USA,Dallas,Tx,54894,05-04-2018,06-03-2018,07-10-2019,07-10-2019,Flatbed (DAT),102,101,102,,,,,,,,,JG Test,
+,,carrier123@loadpaytest.truckstop.com,USA,Chicago,IL,61060,USA,Dallas,Tx,54894,05-04-2018,06-03-2018,07-10-2019,07-10-2019,Flatbed (DAT),103,102,103,,,,,,,,,JG Test,
+,,carrier123@loadpaytest.truckstop.com,USA,Chicago,IL,61060,USA,Dallas,Tx,54894,05-04-2018,06-03-2018,07-10-2019,07-10-2019,Flatbed (DAT),104,103,104,,,,,,,,,JG Test,
+,,carrier123@loadpaytest.truckstop.com,USA,Chicago,IL,61060,USA,Dallas,Tx,54894,05-04-2018,06-03-2018,07-10-2019,07-10-2019,Flatbed (DAT),105,104,105,,,,,,,,,JG Test,

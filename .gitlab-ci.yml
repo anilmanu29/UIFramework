@@ -1,0 +1,103 @@
+stages:
+  - Loadpay
+  - Salesforce
+  - V5
+  - FreightMathching
+  - Mobile
+  - ITSD
+
+Loadpay-Automation-Build:
+  stage: Loadpay
+  
+  only:
+    variables:
+      - $AUT == "Loadpay"
+    
+  tags:
+    - Loadpay
+
+  script:
+    - echo "Building loadpay automation smoke test with maven"
+    - cd C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework && mvn clean compile package test -DsuiteFile=C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework\src\main\resources\TestNG_XMLs\LoadPay\2018\CreateNewBrokerAndCarrierWithPayments.xml
+    
+  allow_failure: true 
+    
+Salesforce-Automation-Build:
+  stage: Salesforce
+
+  only:
+    variables:
+      - $AUT == "Salesforce"
+      
+  tags:
+    - Salesforce
+
+  script:
+    - echo "Building salesforce automation smoke test with maven"
+    - cd C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework && mvn clean compile package test -DsuiteFile=C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework\src\main\resources\TestNG_XMLs\SalesForce\SalesForceAccountCreationTest.xml
+    
+  allow_failure: true
+    
+V5-Automation-Build:
+  stage: V5
+
+  only:
+    variables:
+      - $AUT == "V5"
+      
+  tags:
+    - V5
+
+  script:
+    - echo "Building V5 automation smoke test with maven"
+    - cd C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework && mvn clean compile package test -DsuiteFile=C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework\src\main\resources\TestNG_XMLs\V5\v5LoginTest.xml
+    
+  allow_failure: true
+  
+FreightMatching-Automation-Build:
+  stage: FreightMathching
+
+  only:
+    variables:
+      - $AUT == "FreightMathching"
+      
+  tags:
+    - FreightMathching
+
+  script:
+    - echo "Building Freight Mathching automation smoke test with maven"
+    - cd C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework && mvn clean compile package test -DsuiteFile=C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework\src\main\resources\TestNG_XMLs\FreightMathching\LoginTest.xml
+    
+  allow_failure: true
+  
+Mobile-Automation-Build:
+  stage: Mobile
+
+  only:
+    variables:
+      - $AUT == "Mobile"
+      
+  tags:
+    - Mobile
+
+  script:
+    - echo "Building Mobile automation smoke test with maven"
+    - cd C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework && mvn clean compile package test -DsuiteFile=C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework\src\main\resources\TestNG_XMLs\Mobile\LoginTest.xml
+    
+  allow_failure: true
+  
+ITSD-Automation-Build:
+  stage: ITSD
+
+  only:
+    variables:
+      - $AUT == "ITSD"
+      
+  tags:
+    - ITSD
+
+  script:
+    - echo "Building ITSD automation smoke test with maven"
+    - cd C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework && mvn clean compile package test -DsuiteFile=C:\AUTOMATION\SELENIUM\_Project\testing\SeleniumFramework\src\main\resources\TestNG_XMLs\ITSD\LoginTest.xml
+    
+  allow_failure: true

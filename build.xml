@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE project []>
+
+<project name="OpenURL" default="all" basedir=".">
+    <!-- ======================================================================= -->
+    <!-- ========== Select xml file to be run =================================== -->
+    <!-- ======================================================================= -->
+    <property name="testng.xml.file" value="testNgSuite.xml" />
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+
+    <property name="test.dest" value="${basedir}/target"/>
+    <property name="jars" value="resources/libs"/>
+    <property name="version" value="1.0" />
+    <!-- cleaning the destination folders -->
+    <target name="clean">
+        <delete dir="${test.dest}"/>
+    </target>
+
+    <!-- ====== For setting the classpath ====  -->
+    <target name="classpath">
+        <path id="classpath">
+            <fileset dir="${jars}">
+                <include name="**/*.jar"/>
+            </fileset>
+            <pathelement location="target/classes"/>
+            <pathelement location="target/test-classes"/>
+            <pathelement location="src/test/resources"/>
+        </path>
+    </target>
+
+    <!-- ============ Initializing other stuff ===========  -->
+    <target name="init" depends="classpath">
+        <taskdef name="testng" classpath="${jars}/testng-6.8.7.jar" classname="org.testng.TestNGAntTask" />
+    </target>
+
+    <!-- ============ Compile ===========  -->
+    <target name="compile" depends="init,clean,classpath">
+        <mkdir dir="${test.dest}"/>
+        <mkdir dir="${test.dest}/classes"/>
+        <javac srcdir="src/main/java" destdir="${test.dest}/classes" classpathref="classpath" includeantruntime="false"/>
+    </target>
+
+    <!-- ============ Compile test  ===========  -->
+    <target name="compile-test" depends="compile">
+        <mkdir dir="${test.dest}/test-classes"/>
+        <javac srcdir="src/test/java" destdir="${test.dest}/test-classes" classpathref="classpath" includeantruntime="false"/>
+    </target>
+
+    <!-- ============ Package jar file  ===========  -->
+    <target name="jar" depends="compile,compile-test">
+        <mkdir dir="${test.dest}"/>
+        <jar destfile="${test.dest}/${ant.project.name} ${version}.jar" basedir="${test.dest}/classes" />
+    </target>
+
+    <!-- ============ Run  ===========  useDefaultListeners="false" listeners="com.qas.qtest.agent.testng.listener.TestCaseListener" -->
+    <target name="all" depends="jar">
+        <!-- Assume test.path contains the project library dependencies -->
+        <testng classpathref="classpath" 
+                outputDir="${test.dest}/testng-reports"
+                haltOnFailure="false">
+
+            <!-- Extra project classpath, which is not included in above "test.path" -->
+            <!-- Tell Ant where is the project and test classes -->
+            <classpath location="${test.dest}/classess" />
+            <classpath location="${test.dest}/test-classes" />
+            <xmlfileset dir="${basedir}" includes="${testng.xml.file}"/>
+        </testng>
+    </target>
+	<target name="run_automation" depends="compile">
+		<!-- <antcall target="liux_copyrun">
+		</antcall> -->
+		<antcall target="windows.first.run">
+		</antcall>
+	</target>
+    <target name="windows.first.run">
+		<!-- windows first run -->
+		<exec executable="cmd.exe">
+			<arg
+				line="/c cd D:\QAS\testng-sample &amp;&amp; java -classpath .\resources\libs\*;.;D:\agentctl-2.1.1\build\qautomation\lib\testng-plugin-log-collector.jar;.\target\classes\ org.testng.TestNG ${testng.xml.file}" />
+		</exec>
+
+	</target>
+
+</project>

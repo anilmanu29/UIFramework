@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create New Canadian Carrier">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+   	<listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+   
+
+		
+		<test name="Create New Canadian Carrier - Register-Verify-Activate" preserve-order="true">
+			 <classes>
+				
+	  		<!-- Script for Jira Tickets LP-5409 LoadPay - Selenium Test - Carrier - Register Canada -->
+	
+			 	<class name="testcases.loadpay.carrier.CarrierRegisterCanadaTest"></class>
+				<class name="testcases.loadpay.carrier.CarrierOutlookCanadaTest"></class>
+				<class name="testcases.loadpay.admin.AdminCarrierCanadaTest"></class>
+				<class name="testcases.loadpay.carrier.CarrierCanadaFirstLoginTest"></class>
+			</classes>
+		</test>
+</suite>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+      <suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>            
+	 </suite-files>
+   
+	<test name="X-missing Sprint Test Cases">
+    <classes>
+		
+<!-- 		<class name="testcases.loadpay.carrier.CarrierCompleteAccountModuleTest"></class> -->
+<!-- 		<class name="testcases.loadpay.carrier.CarrierPaymentHistoryTest"></class>		 -->
+
+
+			<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierRegistrationTest"></class> 
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyTest"></class>
+		<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminCancelPayByCheckTest"></class>
+
+		<class name="testcases.loadpay.broker.BrokerBulkUploadPaymentErrorsTest"></class>
+		<class name="testcases.loadpay.broker.BrokerPaymentTermsChargeRecipientTest"></class>
+		
+		<class name="testcases.loadpay.carrier.CarrierDisplayAutoPayMeNowPopuponSelectingPayMeNowButtonTest"></class>
+		<class name="testcases.loadpay.carrier.CarrierPayMeNowEmailNotificationTest"></class>
+		
+		<class name="testcases.loadpay.broker.LoginPageResetPasswordTest"></class>
+		<class name="testcases.loadpay.broker.AccountChangePasswordTest"></class>		
+		<class name="testcases.loadpay.carrier.CarrierAccountChangePasswordTest"></class>
+		<class name="testcases.loadpay.carrier.CarrierLoginPageResetPasswordTest"></class>
+		
+			 <class name="testcases.loadpay.admin.AdminEditEmailBrokerTest"></class>
+		 	 <class name="testcases.loadpay.admin.AdminEditEmailCarrierTest"></class>
+		 	
+		 	<!-- LP-7857 LoadPay - Selenium Test - Admin user to be able to enable or disable < 14 Days-->
+		<class name="testcases.loadpay.admin.AdminEnableDisableLessThan14_DaysPaymentTermsTest"></class>
+		
+            <!-- LP-7857 LoadPay -Admin PayByCheck file upload-->
+		<class name="testcases.loadpay.admin.AdminPayByCheckFileUploadTest"></class>
+		
+
+    </classes>
+  </test> 
+</suite> 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+  </listeners>
+   
+		<test name="SmokeTest_Carrier" preserve-order="true">
+    <classes>
+    
+     <!-- Data updates needed in TestData.xlsx for this entire suite to run: -->
+		<!-- CarrierRegisterData -->
+		<!-- CarrierLoginData -->
+		<!-- BrokerNewPaymentData (at least 2 payments needed)-->
+		<!-- CarrierSchedulePaymentTabData -->
+		<!-- CarrierPaidTabData -->
+		
+		<!-- BrokerLoginData -->
+		<!-- BrokerPaymentDataforUnmatchedCr (at least 2 payments needed)-->
+
+	<!-- Script for Jira Ticket	LP-4270 - LoadPay - Selenium Test - Verify Email in Mailinator_Carrier -->
+		<class name="testcases.loadpay.carrier.CarrierRegisterTest"></class>
+		<class name="testcases.loadpay.carrier.CarrierOutlookTest"></class>
+		<class name="testcases.loadpay.admin.AdminCarrierTest"></class>
+	 	<class name="testcases.loadpay.carrier.CarrierLoginTest"></class>
+	 	
+    <!-- Script for Jira Ticket	LP-3474 & LP-5413 - LoadPay - Selenium Test -  CarrierWireTransferTest & CarrierPayMeNowTabTest -->
+		<class name="testcases.loadpay.broker.BrokerNewPaymentTest"></class> <!-- Will use data to BrokerNewPaymentData Worksheet -->
+		<class name="testcases.loadpay.admin.AdminCancelPayByCheckTest"></class>
+		
+	<!-- Script for Jira Ticket	LP-3476 - LoadPay - Selenium Test - Carrier - Paid -->	
+		<class name="testcases.loadpay.carrier.CarrierSchedulePaymentTest"></class>
+		<class name="testcases.loadpay.carrier.CarrierPayMeNowTabTest"></class>
+		
+	<!-- Script for Jira Ticket	LP-5417 - LoadPay - Selenium Test - Carrier - PayMeNow_Next Day ACH -->	
+		<class name="testcases.loadpay.carrier.CarrierNextDAYACHTest"></class>
+		<class name="testcases.loadpay.carrier.CarrierNotificationTest"></class>
+	
+	<!-- Script for Jira Ticket	LP-3476 - LoadPay - Selenium Test - Carrier - Paid -->		
+		<class name="testcases.loadpay.carrier.CarrierPaidTabTest"></class>
+		
+	<!-- Script for Jira Ticket	LP-5420 - LoadPay - Selenium Test - Carrier - PayMeNow_Next Day ACH Unmatched Carrier -->	
+		<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+		
+	<!-- Script for Jira Ticket	LP-5421 - LoadPay - Selenium Test - UnmatchedCarrier-SAMEDAYACH -->
+		<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminCancelPayByCheckTest"></class>
+		
+		<class name="testcases.loadpay.unmatched.UnmatchedOutlookFunctionsNextDayTest"></class>
+		<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyNextDayTest"></class>
+		<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminNextDayTest"></class>
+		<class name="testcases.loadpay.carrier.CarrierFirstLoginNextDayACHTest"></class>
+		<class name="testcases.loadpay.unmatched.UnmatchedCarrierNextDayACHTest"></class>
+		
+	<!-- Script for Jira Ticket	LP-3495 - LoadPay - Selenium Test - Admin - Daily Check Payments File -->
+		<class name="testcases.loadpay.carrier.CarrierBankingTest"></class>
+		 	 
+    </classes>
+  </test> 
+</suite> 

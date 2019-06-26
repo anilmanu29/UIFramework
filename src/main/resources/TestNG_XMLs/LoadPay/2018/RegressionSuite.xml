@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loadpay Full Regression Test Suite">
+    <suite-files> 
+<!--         <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierCanada.xml"></suite-file>  -->
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file> 
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Hsprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Isprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Jsprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Ksprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Lsprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Msprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Nsprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Osprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Psprint.xml"></suite-file>
+        <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/Xsprint.xml"></suite-file>    
+    </suite-files>
+</suite>
+
+

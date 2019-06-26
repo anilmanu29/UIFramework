@@ -1,0 +1,1 @@
+java -cp D:/qTestAutomation/TestingDemo/TestNG_Sample/testng-sample/resources/libs/*;D:/qTestAutomation/TestingDemo/TestNG_Sample/testng-sample/target/*; org.testng.TestNG D:/qTestAutomation/TestingDemo/TestNG_Sample/testng-sample/testNgSuite.xml

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="L Sprint Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+  	<suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>            
+	 </suite-files>
+   
+	<test name="L Sprint Test Cases" preserve-order="true">
+     <classes>
+    
+  
+ <!--
+ 	 1. BrokerNewPaymentData Sheet = Invoice and Load ID , make sure there are 2 payments are available.
+     2. carrierresetpassworddata Sheet = New Password & Confirm Password,ForceNew Password,ForceConfirm Password data need to be updated  
+     3. carrierparentchilddata sheet = NewEmailID should be updated.
+     4.BrokerPaymentDataforUnmatchedCr = Invoice	LoadID	Amount should be updated
+ 
+   -->
+   
+   		 <!-- < This Task is moved to next sprint for change in Functionality> -->
+		 	 <class name="testcases.loadpay.broker.BrokerBulkUploadPaymentsmatchedCarrierTest"></class> 
+		 	 <class name="testcases.loadpay.broker.BrokerBulkUploadPaymentsUnmatchedCarrierTest"></class>
+		 	 
+			 
+			 <class name="testcases.loadpay.broker.BrokerAvailableCreditTabTest"></class>
+		
+		<!-- Script for Jira Ticket LP-5405 - LoadPay - Selenium Test - Broker Processed Tab AdminPayByCheck -->
+		     <class name="testcases.loadpay.broker.BrokerProcessedTabTest"></class>
+	
+		<!-- Script for Jira Ticket LP-5404 - LoadPay - Selenium Test - Broker DiscountsTab --> 	
+		 	 <class name="testcases.loadpay.broker.BrokerDiscountsTabTest"></class> 
+		
+		<!-- Script for Jira Ticket LP-5406 - LoadPay - Selenium Test - Broker Scheduled Payments Tab -->
+		 	 <class name="testcases.loadpay.broker.BrokerScheduledPaymentsTabTest"></class>
+		 	 
+		 <!-- Script for Jira Ticket   LoadPay - Selenium Test - Admin PayMeNow LockTest  Yurii-->		 	 
+		 	 <class name="testcases.loadpay.admin.AdminPayMeNowLockTest"></class>
+		 	 
+		 <!-- Script for Jira Ticket LP-5410 - LoadPay - LoadPay - Selenium Test - Carrier - parent/child relationships -->
+			 <class name="testcases.loadpay.carrier.CarrierParentChildRelationshipsTest"></class>	
+			
+			 <class name="testcases.loadpay.carrier.CarrierlockedaccountcanbeunlockedbyadminTest"></class>
+			 	
+			 <class name="testcases.loadpay.broker.BrokerEditPaymentMatchedCarrierTest"></class>
+		 	 <class name="testcases.loadpay.broker.BrokerEditPaymentUnmatchedCarrierTest"></class>
+		 	 	
+		 	 <class name="testcases.loadpay.admin.AdminPayMeNowUnlockTest"></class>
+		
+
+    </classes>
+  </test> 
+</suite> 

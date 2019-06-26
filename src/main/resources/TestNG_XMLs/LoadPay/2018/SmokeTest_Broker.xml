@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+  </listeners>
+   
+	<test name="SmokeTest_Broker" preserve-order="true">
+    <classes>
+        
+        
+	<!-- Data updates needed in TestData.xlsx for this entire suite to run: -->
+		<!-- BrokerRegister -->
+		<!-- BrokerLogin -->
+		<!-- BrokerProcessedTabSearchData -->
+	    <!-- BrokerDiscountsTabSearchData -->
+	    <!-- BrokerSchedPaymentTabSearchData -->
+    
+    
+    <!-- Script for Jira Ticket LP-4269 - LoadPay - Selenium Test - Verify Email in Mailinator_Broker -->
+    	<class name="testcases.loadpay.broker.BrokerRegisterTest"></class>
+		<class name="testcases.loadpay.broker.BrokerOutlookTest"></class>
+		<class name="testcases.loadpay.admin.AdminBrokerTest"></class>
+		<class name="testcases.loadpay.broker.BrokerLoginTest"></class>
+		
+	<!-- Script for Jira Ticket LP-5408 - LoadPay - Selenium Test - Broker Banking -->
+		<class name="testcases.loadpay.broker.BrokerBankingTest"></class>
+		 	
+	<!-- Script for Jira Ticket LP-5391 - LoadPay - Selenium Test - BrokerBankAccountUpdate -->
+		<class name="testcases.loadpay.broker.BrokerBankAccountUpdateTest"></class> 
+		
+	<!-- Script for Jira Ticket LP-5405 - LoadPay - Selenium Test - Broker Processed Tab AdminPayByCheck -->
+		<class name="testcases.loadpay.broker.BrokerProcessedTabTest"></class>
+	
+	<!-- Script for Jira Ticket LP-5404 - LoadPay - Selenium Test - Broker DiscountsTab -->
+		<class name="testcases.loadpay.broker.BrokerDiscountsTabTest"></class>
+		
+	<!-- Script for Jira Ticket LP-5406 - LoadPay - Selenium Test - Broker Scheduled Payments Tab -->
+		<class name="testcases.loadpay.broker.BrokerScheduledPaymentsTabTest"></class>
+		
+	<!-- Script for Jira Ticket LP-5398 - LoadPay - Selenium Test - Broker Request Additional Credit -->
+		<class name="testcases.loadpay.broker.BrokerAvailableCreditTabTest"></class>
+		 	 
+    </classes>
+  </test> 
+</suite> 

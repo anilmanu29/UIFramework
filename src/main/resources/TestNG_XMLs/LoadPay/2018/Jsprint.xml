@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="J Sprint Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+     <suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierCanada.xml"></suite-file> 
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>             
+	 </suite-files>
+   
+	<test name="J Sprint Test Cases" preserve-order="true">
+     <classes>
+
+		<!--   Script for Jira Tickets LP-3485 LoadPay - Selenium Test - Shipper- SchedulePaymentTest   -->            
+	        <class name="testcases.loadpay.broker.ShipperSchedulePaymentTest"></class> 
+				
+		<!--   Script for Jira Tickets LP-5397 LoadPay - Selenium Test - Shipper - Advance Payment   -->
+	 		<class name="testcases.loadpay.broker.ShipperAdvancePaymentTest"></class>
+	 		<class name="testcases.loadpay.broker.ShipperCompleteAccountModuleTest"></class>
+			<class name="testcases.loadpay.broker.ShipperPaymentHistoryTest"></class>
+	 		
+			<class name="testcases.loadpay.carrier.CarrierSchedulePaymentTest"></class>
+			
+		<!-- Script for Jira Tickets LP-5412  Carrier - PayMeNow_Fuel Card     -->
+		 	<class name="testcases.loadpay.carrier.CarrierPayMeNowFuelCardTest"></class>	
+
+		<!-- Script for Jira Tickets LP-5420 LoadPay - Selenium Test - Carrier - PayMeNow_Next Day ACH Unmatched Carrier -->
+			<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierRegistrationTest"></class> 
+			
+<!-- 	REDUNDANT covered in UnmatchedCariierEmailVerifyTest -->
+				<!-- 	<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyNextDayTest"></class> -->
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminNextDayTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierNextDayACHTest"></class>
+
+
+		<!--    Script for Jira Tickets LP-5396  Broker - New Payment Unmatched Carrier     --> 
+		 	<class name="testcases.loadpay.unmatched.UnmatchedNewPaymentAdminCarrierTest"></class>
+		 	
+    </classes>
+  </test> 
+</suite> 

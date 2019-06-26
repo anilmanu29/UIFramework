@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create New Broker and Carrier with Payments">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+   	<listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+     <suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateBroker.xml"></suite-file> 
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateCarrier.xml"></suite-file>             
+	 </suite-files>
+   
+		<test name="Create New Broker Payments" preserve-order="true">
+			 <classes>
+	 		<!-- Create new Payments -->
+	 			<class name="testcases.loadpay.broker.BrokerNewPaymentTest"></class>
+			</classes>
+		</test>
+</suite>

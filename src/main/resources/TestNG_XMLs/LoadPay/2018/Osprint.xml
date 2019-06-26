@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="O Sprint Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+    <suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>            
+	 </suite-files>
+   
+	<test name="O Sprint Test Cases" preserve-order="true">
+     <classes>
+    
+  
+ <!--
+   1) BrokerLoginData sheet - Update Username and Password for Broker based on Environment.
+   2) CarrierLoginData sheet -Update Username and Password for Carrier based on Environment.
+   3) ITSDispatchLoginData sheet - Valid Account Id, Username and Password needs to be updated.
+   4) BrokerPaymentDataforUnmatchedCr sheet - Make sure there are 2 payments.
+   5) AdminLogin sheet - Update Username and Password for Admin based on Environment.
+   6) BrokerNewPaymentData sheet -Make sure there are 2 payments.
+   7) HandshakeBrokerLogindata sheet - Update Staging Broker Login details.
+ 
+   -->
+
+ 	 <!-- Script for Jira Ticket LP-5430 - LoadPay - Selenium Test - Admin - Payment sub menu -->
+		<class name="testcases.loadpay.broker.BrokerEditPaymentAdminPaymentssubmenuTest"></class>
+		
+    <!-- Script for Jira Ticket LP-6360 -LoadPay - Selenium Test - Broker - Schedule Payment without Bank Account When PayByInvoice Is Enabled-->
+    	<class name="testcases.loadpay.broker.SchpaymentwithoutBankAccountPayByInvoiceEnabledTest"></class>
+    	
+    <!-- Script for Jira Ticket LP-6466 - LoadPay - Selenium Test - Integration - Handshake with ITSDispatch -->
+		<class name="testcases.loadpay.broker.HandshakewithITSDispatchTest"></class>
+    		  
+    <!-- Script for Jira Ticket LP-6351 - LoadPay - Selenium Test - Admin - Show Quote For Check_Unmatched Carrier -->
+<!-- 		<class name="testcases.loadpay.unmatched.ShowQuoteCheck_UnmatchedCarrierTest"></class>
+ -->    	
+    <!-- Script for Jira Ticket LP-5428 - LoadPay - Selenium Test - Admin - Payment History-->
+		<class name="testcases.loadpay.admin.AdminPaymentHistoryTest"></class>		
+		
+    <!-- Script for Jira Ticket LP-6350 -LoadPay - Selenium Test - Admin - Show Quote For Check_Matched Carrier-->
+<!--     	<class name="testcases.loadpay.carrier.ShowQuoteCheck_matchedCarrierTest"></class>
+ -->    
+    <!-- Script for Jira Ticket LP-LP-6361 -LoadPay - Selenium Test - Broker - Notifications-->
+    	<class name="testcases.loadpay.broker.BrokerNotificationsTest"></class>
+    
+    </classes>
+  </test> 
+</suite> 

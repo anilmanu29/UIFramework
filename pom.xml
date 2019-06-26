@@ -1,0 +1,165 @@
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>SeleniumFramework</groupId>
+  <artifactId>SeleniumFramework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SeleniumFramework</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <suiteFile></suiteFile>
+  </properties>
+
+  <dependencies>
+  
+  				<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+				<dependency>
+				    <groupId>io.rest-assured</groupId>
+				    <artifactId>rest-assured</artifactId>
+				    <version>3.3.0</version>
+				    <scope>test</scope>
+				</dependency>
+				
+				<!-- https://mvnrepository.com/artifact/com.microsoft.ews-java-api/ews-java-api -->
+				<dependency>
+				    <groupId>com.microsoft.ews-java-api</groupId>
+				    <artifactId>ews-java-api</artifactId>
+				    <version>2.0</version>
+				</dependency>
+				
+  				
+   			  <dependency>
+                     <groupId>org.seleniumhq.selenium</groupId>
+                     <artifactId>selenium-java</artifactId>
+                     <version>3.5.3</version>
+              </dependency>
+
+              <dependency>
+                     <groupId>org.testng</groupId>
+                     <artifactId>testng</artifactId>
+                     <version>6.11</version>
+                     <scope>compile</scope>
+              </dependency>
+
+              <dependency>
+                     <groupId>org.apache.poi</groupId>
+                     <artifactId>poi</artifactId>
+                     <version>4.0.0</version>
+              </dependency>
+              
+              <dependency>
+    				<groupId>com.opencsv</groupId>
+    				<artifactId>opencsv</artifactId>
+    				<version>4.2</version>
+			  </dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+			<dependency>
+			    <groupId>org.apache.logging.log4j</groupId>
+			    <artifactId>log4j-api</artifactId>
+			    <version>2.11.0</version>
+			</dependency>
+
+              <dependency>
+                     <groupId>org.apache.poi</groupId>
+                     <artifactId>poi-ooxml</artifactId>
+                     <version>4.0.0</version>
+              </dependency>
+              
+              <dependency>
+                     <groupId>org.apache.poi</groupId>
+                     <artifactId>poi-ooxml-schemas</artifactId>
+                     <version>4.0.0</version>
+              </dependency>
+              
+              <dependency>
+                     <groupId>org.apache.poi</groupId>
+                     <artifactId>poi-scratchpad</artifactId>
+                     <version>4.0.0</version>
+              </dependency>
+              
+              <dependency>
+                     <groupId>org.apache.poi</groupId>
+                     <artifactId>ooxml-schemas</artifactId>
+                     <version>1.4</version>
+              </dependency>
+
+              <dependency>
+                     <groupId>org.apache.poi</groupId>
+                     <artifactId>openxml4j</artifactId>
+                     <version>1.0-beta</version>
+              </dependency>
+              
+
+              <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+              <dependency>
+                     <groupId>com.relevantcodes</groupId>
+                     <artifactId>extentreports</artifactId>
+                     <version>2.41.2</version>
+              </dependency>
+              
+              <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-testng-adaptor -->
+			  <dependency>
+			        <groupId>ru.yandex.qatools.allure</groupId>
+			        <artifactId>allure-testng-adaptor</artifactId>
+			        <version>1.5.4</version>
+			  </dependency>
+			  
+			   <dependency>
+					<groupId>org.subethamail</groupId>
+					<artifactId>subethasmtp</artifactId>
+					<version>3.1.7</version>
+					<scope>test</scope>
+			   </dependency>
+
+				<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+				<dependency>
+					<groupId>commons-net</groupId>
+					<artifactId>commons-net</artifactId>
+					<version>3.6</version>
+				</dependency>
+				
+				<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+				<dependency>
+					<groupId>javax.mail</groupId>
+					<artifactId>javax.mail-api</artifactId>
+					<version>1.6.0</version>
+				</dependency>
+              
+    
+  </dependencies>
+  
+   <!-- Configure maven surefire plugin for qtest testng-plugin-log-collector to listen the tests-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <encoding>iso-8859-1</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- End configuration -->
+</project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+  </listeners>
+   
+	<test name="SmokeTest_Admin" preserve-order="true">
+    	<classes>
+        
+        
+		<!-- Data updates needed in TestData.xlsx for this entire suite to run: -->
+			<!-- getPaymentData = BrokerNewPaymentData (2x payments needed) -->
+		    <!-- getPaymentDataforUnmatchcarrier = BrokerPaymentDataforUnmatchedCr-->
+	   		<!-- getBrokerRegisterData = BrokerRegister -->
+	   		<!-- getCarrierRegisterData = CarrierRegisterData -->
+	   		
+	    
+	   		<!-- Script for Jira Tickets LP-5424  AdminPayByCheck  Anil-->
+<!-- 				<class name="testcases.loadpay.broker.BrokerNewPaymentTest"></class> -->
+<!-- 			    <class name="testcases.loadpay.admin.AdminPayByCheckTest"></class> -->
+			    
+<!-- 			 	<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class> -->
+<!-- 			 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminPayByCheckTest"></class> -->
+			 	
+			<!-- Script for Jira Tickets LP-5424  AdminPayByCheck  Anil-->
+<!-- 			 	<class name="testcases.loadpay.admin.AdminPayMeNowLockTest"></class> -->
+			 	
+			<!-- Script for Jira Tickets LP-5424  AdminPayByCheck  Anil-->
+			 	<class name="testcases.loadpay.admin.AdminEditEmailBrokerTest"></class>
+			 	<class name="testcases.loadpay.admin.AdminEditEmailCarrierTest"></class>
+			 	 
+    </classes>
+  </test> 
+</suite> 

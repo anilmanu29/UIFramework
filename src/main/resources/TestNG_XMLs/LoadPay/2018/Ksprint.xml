@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="K Sprint Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+   <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+  
+   <!-- Test Data Changes > -->
+    
+    <!-- 
+   Using dynamic data, there should be at least 2 rows of data for new and unmatched carrier payments
+   
+   IF NOT USING DYNAMIC DATA...
+   1) BrokerNewPaymentData sheet - Invoice and LoadID details needs to be updated.
+   2) BrokerPaymentDataforUnmatchedCr sheet - Invoice and LoadID details needs to be updated.
+   3) BrokerLoginData sheet - Valid UserName and Password needs to be updated
+   4) CarrierLoginData sheet - Valid UserName and Password needs to be updated
+   5) CarrierPaidTab Sheet - Carrier details should be Updated.
+   -->
+  
+	<suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>            
+	 </suite-files>
+   
+	<test name="K Sprint Test Cases" preserve-order="true">
+     <classes>
+        
+
+
+		<!-- Script for Jira Tickets LP-5424  AdminPayByCheck  Anil-->
+		<!-- Invoice and LoadID Amount details needs to be updated in BrokerNewPayment and BrokerPaymentDataforUnmatchedCr Sheets-->
+		<!-- 	<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminPayByCheckTest"></class> -->
+		    
+		   <!--  <class name="testcases.loadpay.admin.AdminPayByCheckTest"></class>
+		    <class name="testcases.loadpay.admin.AdminCancelPayByCheckTest"></class>
+			<class name="testcases.loadpay.admin.AdminPayByCheckServiceBatchFileTest"></class> -->
+			
+		<!-- Script for Jira Tickets LP-3476  Carrier_Paid Tab  -->
+		 	 <!-- No Need to Update Test Data Sheet -->
+		 	<class name="testcases.loadpay.carrier.CarrierPaidTabTest"></class>
+ 	
+		<!-- Script for Jira Tickets LP-3495 - Carrier Banking     -->
+			<!-- No Need to Update Test Data Sheet -->		
+		 	<class name="testcases.loadpay.carrier.CarrierBankingTest"></class>
+		 		
+		 	
+		<!--  Script for Jira Tickets LP-LP-5408 - Broker Banking     -->
+		 	<!-- No Need to Update Test Data Sheet -->
+		 	<class name="testcases.loadpay.broker.BrokerBankingTest"></class>
+		 	
+		<!--  Script for Jira Tickets LP-LP-5391 - BrokerBankAccountUpdate     -->
+		 	<!-- No Need to Update Test Data Sheet -->
+		 	<class name="testcases.loadpay.broker.BrokerBankAccountUpdateTest"></class>
+
+    </classes>
+  </test> 
+</suite> 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create New Canadian Broker">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+   	<listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+   
+		
+		<test name="Create New Canadian Broker - Register-Verify-Activate" preserve-order="true">
+			 <classes>
+				
+	 		<!-- Script for Jira Tickets LP-5390 LoadPay - Selenium Test - Broker - Register Canada  Shantesh  -->
+	
+				<class name="testcases.loadpay.broker.BrokerRegisterCanadaTest"></class>
+			 	<class name="testcases.loadpay.broker.BrokerOutlookCanadaTest"></class>
+				<class name="testcases.loadpay.admin.AdminBrokerCanadaTest"></class>
+				<class name="testcases.loadpay.broker.BrokerCanadaFirstLoginTest"></class>
+			</classes>
+		</test>
+</suite>

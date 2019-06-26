@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create New Carrier">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+   	<listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+   
+
+		<test name="Create-Register-Verify-Activate Carrier" preserve-order="true">
+			 <classes>
+	
+				<!-- Carrier Register -->
+			    	<class name="testcases.loadpay.carrier.CarrierRegisterTest"></class>
+					<class name="testcases.loadpay.carrier.CarrierOutlookTest"></class>
+					<class name="testcases.loadpay.admin.AdminCarrierTest"></class>
+		 			<class name="testcases.loadpay.carrier.CarrierLoginTest"></class>
+			  
+			</classes>
+		</test>
+</suite>

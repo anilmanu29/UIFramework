@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="M Sprint Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+  
+    <suite-files>
+       <suite-file path="src/main/resources/TestNG_XMLs/LoadPay/2018/CreateNewBrokerAndCarrierWithPayments.xml"></suite-file>            
+	 </suite-files>
+   
+	<test name="M Sprint Test Cases" preserve-order="true">
+     <classes>
+    
+<!-- Test data:< In config.properties file useDynamicBrokerData = true, useDynamicCarrierData = true, useDynamicUnmatchedData = true>
+1. BrokerNewPaymentData Sheet = Invoice and Load ID , make sure there are 2 payments are available.
+2. carrierresetpassworddata Sheet = New Password & Confirm Password,ForceNew Password,ForceConfirm Password data need to be updated  
+3. BrokerLoginData Sheet UserName and Password need to be updated as per Environments
+4. AdminLogin Sheet UserName and Password need to be updated as per Environments
+5. AdminSearchData Sheet Data need to be Updated -->
+    
+       
+    <!-- Script for Jira Ticket LP-5416 - LoadPay - LoadPay - Selenium Test - Carrier account locked after 10 failed logins -->
+    	<class name="testcases.loadpay.carrier.CarrierAccountLockedafter10FailedLoginsTest"></class>
+    	
+    <!-- Script for Jira Ticket LP-5415 - LoadPay - LoadPay - Selenium Test -  Carrier can reset password when account is locked -->
+    
+    	<class name="testcases.loadpay.carrier.CarrierlockedAccountResetPasswordTest"></class>
+    	
+    <!-- Script for Jira Ticket LP-5399 - LoadPay- Broker Payment Terms Charge Sender -->	
+    	<class name="testcases.loadpay.broker.BrokerPaymentTermsChargeSenderTest"></class>
+    	
+    <!-- Script for Jira Ticket LP-5423 - LoadPay - Selenium Test - Admin - Search-->	
+    	<class name="testcases.loadpay.admin.AdminSearchTest"></class>
+    	
+	
+    </classes>
+  </test> 
+</suite> 

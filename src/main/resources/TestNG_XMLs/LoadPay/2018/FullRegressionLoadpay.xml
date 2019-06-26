@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loadpay Full Regression Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+   
+   
+	 <test name="All Tests" preserve-order="true">
+    	<classes>
+    		<!-- Broker Register -->
+			<class name="testcases.loadpay.broker.BrokerRegisterTest"></class>
+			<class name="testcases.loadpay.broker.BrokerOutlookTest"></class>
+			<class name="testcases.loadpay.admin.AdminBrokerTest"></class>
+			<class name="testcases.loadpay.broker.BrokerLoginTest"></class>
+				
+			<!-- Carrier Register -->
+			<class name="testcases.loadpay.carrier.CarrierRegisterTest"></class>
+			<class name="testcases.loadpay.carrier.CarrierOutlookTest"></class>
+			<class name="testcases.loadpay.admin.AdminCarrierTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierLoginTest"></class>
+		 			
+    		<class name="testcases.loadpay.broker.BrokerNewPaymentTest"></class>
+    		
+<!--     		Script for Jira Tickets LP-5390 LoadPay - Selenium Test - Broker - Register Canada  Shantesh  -->
+			<class name="testcases.loadpay.broker.BrokerRegisterCanadaTest"></class>
+			<class name="testcases.loadpay.broker.BrokerOutlookCanadaTest"></class>
+			<class name="testcases.loadpay.admin.AdminBrokerCanadaTest"></class>
+			<class name="testcases.loadpay.broker.BrokerCanadaFirstLoginTest"></class>
+
+<!-- 	  		Script for Jira Tickets LP-5409 LoadPay - Selenium Test - Carrier - Register Canada -->
+			<class name="testcases.loadpay.carrier.CarrierRegisterCanadaTest"></class>
+			<class name="testcases.loadpay.carrier.CarrierOutlookCanadaTest"></class>
+			<class name="testcases.loadpay.admin.AdminCarrierCanadaTest"></class>
+			<class name="testcases.loadpay.carrier.CarrierCanadaFirstLoginTest"></class>
+        
+<!--           Script for Jira Tickets LP-3474 & LP-5413  CarrierWireTransferTest & CarrierPayMeNowTabTest -->
+		  	<class name="testcases.loadpay.carrier.CarrierNotificationTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierWireTransferTest"></class>
+
+<!-- 		Script for Jira Tickets LP-5411 & LP-5417 CarrierSameDayACHTest &  CarrierNextDayACHTest     -->
+			<class name="testcases.loadpay.carrier.CarrierSameDayACHTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierNextDAYACHTest"></class>
+		 	<class name="testcases.loadpay.carrier.CarrierPayMeNowTabTest"></class>
+				
+<!-- 		Script for Jira Tickets LP-5421 UnmatchedCarrier-SAMEDAYACH       -->
+			<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+	        <class name="testcases.loadpay.unmatched.UnmatchedCarrierRegistrationTest"></class> 
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyTest"></class>
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminTest"></class>
+			<class name="testcases.loadpay.carrier.CarrierFirstLoginTest"></class>	
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierSameDayACHTest"></class>
+		 	
+<!-- 		Script for Jira Tickets LP-5419 UnmatchedCarrier-WIRETRASFER    -->
+		 	<class name="testcases.loadpay.unmatched.UnmatchedCarrierWireTransferTest"></class>
+		 	
+		 	
+		 
+		 
+		 
+<!-- 		Script for Jira Tickets LP-3485 LoadPay - Selenium Test - Shipper- SchedulePaymentTest   -->
+	        <class name="testcases.loadpay.broker.ShipperSchedulePaymentTest"></class> 
+				
+<!-- 		Script for Jira Tickets LP-5397 LoadPay - Selenium Test - Shipper - Advance Payment   -->
+	 		<class name="testcases.loadpay.broker.ShipperAdvancePaymentTest"></class>
+	 		<class name="testcases.loadpay.broker.ShipperCompleteAccountModuleTest"></class>
+			<class name="testcases.loadpay.broker.ShipperPaymentHistoryTest"></class>
+	 		
+			<class name="testcases.loadpay.carrier.CarrierSchedulePaymentTest"></class>
+			
+<!-- 		Script for Jira Tickets LP-5412  Carrier - PayMeNow_Fuel Card     -->
+		 	<class name="testcases.loadpay.carrier.CarrierPayMeNowFuelCardTest"></class>	
+
+<!-- 		Script for Jira Tickets LP-5420 LoadPay - Selenium Test - Carrier - PayMeNow_Next Day ACH Unmatched Carrier -->
+			<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierRegistrationTest"></class> 
+			
+<!-- 		<REDUNDANT covered in UnmatchedCariierEmailVerifyTest -->
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyNextDayTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminNextDayTest"></class>
+			<class name="testcases.loadpay.unmatched.UnmatchedCarrierNextDayACHTest"></class>
+
+
+<!-- 		Script for Jira Tickets LP-5396  Broker - New Payment Unmatched Carrier     -->
+		 	<class name="testcases.loadpay.unmatched.UnmatchedNewPaymentAdminCarrierTest"></class>
+		 	
+
+			
+<!-- 		Script for Jira Tickets LP-3476  Carrier_Paid Tab  -->
+		 	<class name="testcases.loadpay.carrier.CarrierPaidTabTest"></class>
+ 	
+<!-- 		Script for Jira Tickets LP-3495 - Carrier Banking     -->
+		 	<class name="testcases.loadpay.carrier.CarrierBankingTest"></class>
+		 		
+<!-- 		Script for Jira Tickets LP-LP-5408 - Broker Banking     -->
+		 	<class name="testcases.loadpay.broker.BrokerBankingTest"></class>
+		 	
+<!-- 		Script for Jira Tickets LP-LP-5391 - BrokerBankAccountUpdate     -->
+		 	<class name="testcases.loadpay.broker.BrokerBankAccountUpdateTest"></class>
+		 	
+		 	
+		 	
+		 	
+<!-- 		This Task is moved to next sprint for change in Functionality> -->
+		 	 <class name="testcases.loadpay.broker.BrokerBulkUploadPaymentsmatchedCarrierTest"></class> 
+		 	 <class name="testcases.loadpay.broker.BrokerBulkUploadPaymentsUnmatchedCarrierTest"></class>
+			 <class name="testcases.loadpay.broker.BrokerAvailableCreditTabTest"></class>
+		
+<!-- 		Script for Jira Ticket LP-5405 - LoadPay - Selenium Test - Broker Processed Tab AdminPayByCheck -->
+		     <class name="testcases.loadpay.broker.BrokerProcessedTabTest"></class>
+	
+<!-- 		Script for Jira Ticket LP-5404 - LoadPay - Selenium Test - Broker DiscountsTab --> 	
+		 	 <class name="testcases.loadpay.broker.BrokerDiscountsTabTest"></class> 
+		
+<!-- 		Script for Jira Ticket LP-5406 - LoadPay - Selenium Test - Broker Scheduled Payments Tab -->
+		 	 <class name="testcases.loadpay.broker.BrokerScheduledPaymentsTabTest"></class>
+		 	 
+<!-- 		Script for Jira Ticket   LoadPay - Selenium Test - Admin PayMeNow LockTest  Yurii-->
+		 	 <class name="testcases.loadpay.admin.AdminPayMeNowLockTest"></class>
+		 	 
+<!-- 		Script for Jira Ticket LP-5410 - LoadPay - LoadPay - Selenium Test - Carrier - parent/child relationships -->
+			 <class name="testcases.loadpay.carrier.CarrierParentChildRelationshipsTest"></class>	
+			 <class name="testcases.loadpay.carrier.CarrierlockedaccountcanbeunlockedbyadminTest"></class>
+			 	
+			 <class name="testcases.loadpay.broker.BrokerEditPaymentMatchedCarrierTest"></class>
+		 	 <class name="testcases.loadpay.broker.BrokerEditPaymentUnmatchedCarrierTest"></class>
+		 	 	
+		 	 <class name="testcases.loadpay.admin.AdminPayMeNowUnlockTest"></class>
+		 	 
+		 	 
+		 	 
+<!-- 		Script for Jira Ticket LP-5416 - LoadPay - LoadPay - Selenium Test - Carrier account locked after 10 failed logins -->
+    		 <class name="testcases.loadpay.carrier.CarrierAccountLockedafter10FailedLoginsTest"></class>
+    	
+<!--     	Script for Jira Ticket LP-5415 - LoadPay - LoadPay - Selenium Test -  Carrier can reset password when account is locked -->
+    		 <class name="testcases.loadpay.carrier.CarrierlockedAccountResetPasswordTest"></class>
+    	
+<!--     	Script for Jira Ticket LP-5399 - LoadPay- Broker Payment Terms Charge Sender	 -->
+    		 <class name="testcases.loadpay.broker.BrokerPaymentTermsChargeSenderTest"></class>
+    	
+<!--     	Script for Jira Ticket LP-5423 - LoadPay - Selenium Test - Admin - Search	 -->
+    		 <class name="testcases.loadpay.admin.AdminSearchTest"></class>
+    		 
+    		 
+    		 <!--     	Script for Jira Tickets LP-6500  LoadPay - Selenium Test - Carrier_PayMeNow on Unmatched_Fuel Card -->
+   			<class name="testcases.loadpay.broker.BrokerPaymentforUnmatchedCarrierTest"></class>
+	 		<class name="testcases.loadpay.unmatched.UnmatchedCarrierRegistrationTest"></class> 
+			<class name="testcases.loadpay.unmatched.UnmatchedCariierEmailVerifyTest"></class>
+	 		<class name="testcases.loadpay.unmatched.UnmatchedCarrierAdminTest"></class>
+	 		<class name="testcases.loadpay.carrier.CarrierFirstLoginFuelCardTest"></class>
+	 		<class name="testcases.loadpay.unmatched.UnmatchedCarrierPayMeNowFuelCardTest"></class>
+    	
+<!--     	Script for Jira Ticket LP-6328-LoadPay - Selenium Test - Integration - Handshake with RTF_Carrier     -->
+			<class name="testcases.loadpay.carrier.HandshakewithRTFCarrierTest"></class>
+		
+<!--     	Script for Jira Ticket LP-6327-LoadPay - Selenium Test - Integration - Handshake with RTF_Broker -->
+		 	<class name="testcases.loadpay.broker.HandshakewithRTFBrokerTest"></class>
+    	
+<!-- 		Script for Jira Ticket LP-6363 LoadPay - Selenium Test - Broker - Cannot create advance payment to unmatched carrier-->
+			<class name="testcases.loadpay.broker.BrokerAdvancePaymenttoUnmatchedCarrierTest"></class>
+		
+<!--      	Script for Jira Ticket LP-6365 LoadPay - Selenium Test - Broker - Disable copy / paste functionality for add and confirm bank account 	 -->
+			<class name="testcases.loadpay.broker.BrokerDisableCopyPasteConfirmBankAccountTest"></class>
+ 
+<!--     	Script for Jira Ticket LP-6364 - LoadPay - Selenium Test - Broker - 10% Limit Email Alert	 -->
+			<class name="testcases.loadpay.broker.BrokerViewCreditLessThan1000Test"></class>
+			 
+<!-- 		Script for Jira Ticket verifyAlertMessageverifyAlertMessage LoadPay -Selenium Test- Broker - Cannot Register Duplicate Email-->
+			<class name="testcases.loadpay.broker.BrokerCanNotRegisterDuplicateEmail"></class>
+         
+<!--     	Script for Jira Ticket LP-6367 LoadPay - Selenium Test - Carrier - Cannot Register Duplicate Email -->
+			<class name="testcases.loadpay.carrier.CarrierCanNotRegisterDuplicateEmail"></class>
+			
+<!-- 		Script for Jira Ticket LP-6230 LoadPay - Selenium Test -Admin Wire Transfer-->
+		 	<class name="testcases.loadpay.admin.AdminWireTransferTest"></class>
+		 	
+
+
+
+<!-- 		Script for Jira Ticket LP-5430 - LoadPay - Selenium Test - Admin - Payment sub menu -->
+			<class name="testcases.loadpay.broker.BrokerEditPaymentAdminPaymentssubmenuTest"></class>
+		
+<!--     	Script for Jira Ticket LP-6360 -LoadPay - Selenium Test - Broker - Schedule Payment without Bank Account When PayByInvoice Is Enabled -->
+    		<class name="testcases.loadpay.broker.SchpaymentwithoutBankAccountPayByInvoiceEnabledTest"></class>
+    	
+<!--     	Script for Jira Ticket LP-6466 - LoadPay - Selenium Test - Integration - Handshake with ITSDispatch -->
+			<class name="testcases.loadpay.broker.HandshakewithITSDispatchTest"></class>
+    		  
+<!--     	Script for Jira Ticket LP-6351 - LoadPay - Selenium Test - Admin - Show Quote For Check_Unmatched Carrier -->
+ 			<class name="testcases.loadpay.unmatched.ShowQuoteCheck_UnmatchedCarrierTest"></class>
+ 			
+<!--     	Script for Jira Ticket LP-5428 - LoadPay - Selenium Test - Admin - Payment History -->
+			<class name="testcases.loadpay.admin.AdminPaymentHistoryTest"></class>		
+		
+<!--     	Script for Jira Ticket LP-6350 -LoadPay - Selenium Test - Admin - Show Quote For Check_Matched Carrier -->
+ 			<class name="testcases.loadpay.carrier.ShowQuoteCheck_matchedCarrierTest"></class>
+			    
+<!--     	Script for Jira Ticket LP-LP-6361 -LoadPay - Selenium Test - Broker - Notifications -->
+    		<class name="testcases.loadpay.broker.BrokerNotificationsTest"></class>
+    		
+    		
+    		
+    		
+    		
+<!--     	Script for Jira Ticket LP-6621-LoadPay - Selenium Test - Admin - Payments Greater than 45 Days -->
+			<class name="testcases.loadpay.admin.AdminPaymentsGreaterthan45DaysTest"></class>		
+		
+<!-- 		Script for Jira Ticket LP-6366-LoadPay - Carrier - Disable copy / paste functionality for add and confirm bank account -->
+			<class name="testcases.loadpay.carrier.CarrierDisableCopyPasteConfirmBankAccountTest"></class> 
+
+<!-- 		Script for Jira Ticket LP-3494-LoadPay-Admin-Daily NACHA Payments File -->
+			<class name="testcases.loadpay.admin.AdminDailyNACHAPaymentsFileTest"></class>
+		
+<!-- 		Script for Jira Ticket LP-6228-LoadPay-Admin-Customer Side Menu Search-->
+			<class name="testcases.loadpay.admin.AdminCustomersSideMenuSearchTest"></class>
+			
+<!-- 		Script for Jira Ticket LP-5427-LoadPay - Selenium Test - Admin - Delay Debit-->
+			<class name="testcases.loadpay.admin.AdminDelayDebitTest"></class>
+
+<!-- 		Script for Jira Ticket LP-6627-LoadPay-Broker-Download .CSV from Scheduled Payments -->
+			<class name="testcases.loadpay.broker.BrokerDownloadCSVFromScheduledPaymentsTest"></class>		
+		
+<!-- 		Script for Jira Ticket LP-6628-LoadPay-Carrier-Download .CSV from Scheduled Payments -->
+			<class name="testcases.loadpay.carrier.CarrierDownloadCSVFromScheduledPaymentsTest"></class>
+		
+		</classes>
+	</test> 
+</suite> 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/ews-java-api-2.0.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/httpclient-4.4.1.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/jackson-core-2.2.2.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/joda-time-2.8.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/jxl.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/reportng-1.1.3.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/testng-6.8.7.jar"/>
+	<classpathentry kind="lib" path="X:/Softwares/SalesforceFramework/SalesForceSeleniumFramework/SeleniumFramework/src/main/resources/libs/velocity-dep-1.4.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
