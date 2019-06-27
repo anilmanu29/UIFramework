@@ -2,6 +2,8 @@ package testcases.loadpay.admin;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,6 +24,7 @@ public class AdminBrokerCanadaTest extends TestBase {
 	AdminHomePage h;
 	AdminLogin a;
 	Select s;
+	
 	public static String depositAmount = "";
 
 	public AdminBrokerCanadaTest() {
@@ -47,51 +50,24 @@ public class AdminBrokerCanadaTest extends TestBase {
 			Thread.sleep(3000);
 			
 			driver.findElement(By.linkText("Community")).click();
-	}
+			
+			// Store all currently open tabs in tabs
+			 ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			 
+			 
+			 // Switch newly open Tab
+			 driver.switchTo().window(tabs.get(0));
+			 
+			 // Perform some operation on Newly open tab
+			 // Close newly open tab after performing some operations.
+			 driver.close();
+			 
+			 // Switch to old(Parent) tab.
+			 driver.switchTo().window(tabs.get(1));
 
-//	@Test(dataProvider = "getAdminLoginData", dependsOnMethods = "Home")
-//	public void adminLogin(String Username, String pass) throws IOException, InterruptedException, AWTException {
-//		wait.until(ExpectedConditions.elementToBeClickable(a.getUserName()));
-//		a.adminUserPass(Username, pass);
-//
-//		a.adminLogin();
-//
-//		a.ClickOnCustomersTab();
-//
-//		a.ClickOnSearchButton();
-//
-//		a.DoubleClickID();
-//
-//		a.StatusIDDropDown();
-//
-//		a.UpdateButton();
-//
-//		Thread.sleep(2000);
-//
-//		a.ClickOnCreditTab();
-//
-//		a.EnterExtendedCredit("999999");
-//
-//		a.ClickOnCreditSubmitButton();
-//		Thread.sleep(3000);
-//
-//		// go to banking tab and capture deposit amount
-//		WebElement adminCustomerBankingTab = driver.findElement(By.xpath("//a[contains(text(),'Banking')]"));
-//		adminCustomerBankingTab.click();
-//
-//		wait.until(ExpectedConditions.elementToBeClickable(adminCustomerBankingTab));
-//		Thread.sleep(10000);
-//
-//		WebElement adminCustomerDepositAmount = driver.findElement(By.xpath(
-//				"//*[@id=\"angularScope\"]/div[1]/div/div[2]/div/div/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div/div/div/p[9]/span"));
-//		depositAmount = adminCustomerDepositAmount.getText();
-//		depositAmount = depositAmount.substring(depositAmount.length() - 2, depositAmount.length());
-//		// depositAmount = "0" + depositAmount;
-//		log.info("Captured deposit amount: " + depositAmount);
-//
-//		wait.until(ExpectedConditions.elementToBeClickable(a.getLogOut()));
-//		a.AdminLogOut();
-//
-//	}
+		}
+
 
 }
+
+
