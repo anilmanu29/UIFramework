@@ -18,8 +18,8 @@ public class AdminLogin extends TestBase {
 	Select s;
 	JavascriptExecutor js;
 
-	@FindBy(xpath = "//span[class='error ng-binding'] ")
-	By termDateMustBeBetween14And45DaysError;
+	@FindBy(xpath = "//*[@id=\"ember6\"]/header/div/div/div[2]/span/button[2]/span")
+	WebElement LoginLink;
 	
 	
 	@FindBy(xpath = ".//*[@id='UserName']")
@@ -198,6 +198,12 @@ public class AdminLogin extends TestBase {
 		js = (JavascriptExecutor) driver;
 	}
 
+	public void adminLoginLink() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(LoginLink));
+		LoginLink.click();
+		wait.until(ExpectedConditions.elementToBeClickable(LoginLink));
+	}
+	
 	public void adminUserPass(String Username, String pass) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(UserName));
 		UserName.sendKeys(Username);
@@ -243,12 +249,12 @@ public class AdminLogin extends TestBase {
 		submitLessThan14Days.click();
 
 	}
-	
-	public void paymentBetween14And45Days() throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(termDateMustBeBetween14And45DaysError));
-        Assert.assertEquals(termDateMustBeBetween14And45DaysError, "Error is not happening, user scheduled the payment!");
-	}
-	
+//	
+//	public void paymentBetween14And45Days() throws InterruptedException {
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(termDateMustBeBetween14And45DaysError));
+//        Assert.assertEquals(termDateMustBeBetween14And45DaysError, "Error is not happening, user scheduled the payment!");
+//	}
+//	
 	
 	public void Clickverifysystemnote() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(verifysystemnote));

@@ -22,7 +22,7 @@ import util.TestUtil;
 
 public class AdminBrokerCanadaTest extends TestBase {
 	AdminHomePage h;
-	AdminLogin a;
+	AdminLogin adminLoginObj;
 	Select s;
 	
 	public static String depositAmount = "";
@@ -36,7 +36,7 @@ public class AdminBrokerCanadaTest extends TestBase {
 		TestUtil.className = this.getClass().getName();
 		initialization();
 		h = new AdminHomePage();
-		a = new AdminLogin();
+		adminLoginObj = new AdminLogin();
 		wait = new WebDriverWait(driver, 30);
 	}
 
@@ -64,8 +64,17 @@ public class AdminBrokerCanadaTest extends TestBase {
 			 
 			 // Switch to old(Parent) tab.
 			 driver.switchTo().window(tabs.get(1));
+			 adminLoginObj.adminLoginLink();
 
 		}
+	
+	@Test(dataProvider = "getRevoltadminloginData", dependsOnMethods = "Home")
+	public void adminLogin(String Username, String pass) throws IOException, InterruptedException, AWTException {
+		adminLoginObj.adminUserPass(Username, pass);
+		adminLoginObj.adminLogin();
+		
+	}
+
 
 
 }

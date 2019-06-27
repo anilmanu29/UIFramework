@@ -132,9 +132,9 @@ public class TestBase {
 	}
 
 	@DataProvider
-	public Object[][] getBrokerLoginData() throws InvalidFormatException, IOException {
+	public Object[][] getRevoltadminloginData() throws InvalidFormatException, IOException {
 		ReadExcel read = new ReadExcel();
-		return read.getCellData(loadPayTestDataFilePath, "BrokerLoginData");
+		return read.getCellData(salesforceTestDataFilePath, "RevoltadminloginData");
 	}
 
 	@DataProvider
@@ -528,6 +528,6 @@ public class TestBase {
 			}
 		}
 
-		//driver.quit();
+		driver.quit();
 	}
 }
