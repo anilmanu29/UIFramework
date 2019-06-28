@@ -16,13 +16,13 @@ import org.testng.annotations.Test;
 
 import base.TestBase;
 import pages.loadpay.admin.AdminHomePage;
-import pages.loadpay.admin.AdminLogin;
+import pages.loadpay.admin.AdminLoginPage;
 
 import util.TestUtil;
 
 public class AdminBrokerCanadaTest extends TestBase {
 	AdminHomePage h;
-	AdminLogin adminLoginObj;
+	AdminLoginPage adminLoginObj;
 	Select s;
 	
 	public static String depositAmount = "";
@@ -36,7 +36,7 @@ public class AdminBrokerCanadaTest extends TestBase {
 		TestUtil.className = this.getClass().getName();
 		initialization();
 		h = new AdminHomePage();
-		adminLoginObj = new AdminLogin();
+		adminLoginObj = new AdminLoginPage();
 		wait = new WebDriverWait(driver, 30);
 	}
 
@@ -68,13 +68,16 @@ public class AdminBrokerCanadaTest extends TestBase {
 
 		}
 	
+
 	@Test(dataProvider = "getRevoltadminloginData", dependsOnMethods = "Home")
 	public void adminLogin(String Username, String pass) throws IOException, InterruptedException, AWTException {
 		adminLoginObj.adminUserPass(Username, pass);
-		adminLoginObj.adminLogin();
+		adminLoginObj.adminLoginButton();
+		
 		
 	}
 
+	
 
 
 }

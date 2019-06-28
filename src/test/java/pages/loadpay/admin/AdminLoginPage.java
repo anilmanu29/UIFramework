@@ -14,7 +14,7 @@ import org.testng.Assert;
 
 import base.TestBase;
 
-public class AdminLogin extends TestBase {
+public class AdminLoginPage extends TestBase {
 	Select s;
 	JavascriptExecutor js;
 
@@ -22,11 +22,16 @@ public class AdminLogin extends TestBase {
 	WebElement LoginLink;
 	
 	
-	@FindBy(xpath = ".//*[@id='UserName']")
-	WebElement UserName;
-
-	@FindBy(xpath = ".//*[@id='Password']")
-	WebElement Password;
+	@FindBy(id = "login-account-name")
+	WebElement username;
+	
+	@FindBy(id = "login-account-password")
+	WebElement password;
+	
+	@FindBy(xpath = "/html/body/section/div/div[4]/div/div/div/div[3]/div[2]/button[1]/span")
+	WebElement loginbutton;
+	
+	//----------------------------------------------------------------
 
 	@FindBy(xpath = "html/body/div[1]/div/div/div[2]/form/div[4]/input")
 	WebElement loginBtn;
@@ -192,7 +197,7 @@ public class AdminLogin extends TestBase {
 	@FindBy(xpath = (".//*[@id='angularScope']/div[1]/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[3]/div/div[2]/ul[2]/li[3]/input"))
 	WebElement Factoruncheck;
 
-	public AdminLogin() throws IOException {
+	public AdminLoginPage() throws IOException {
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 30);
 		js = (JavascriptExecutor) driver;
@@ -205,17 +210,16 @@ public class AdminLogin extends TestBase {
 	}
 	
 	public void adminUserPass(String Username, String pass) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(UserName));
-		UserName.sendKeys(Username);
-		wait.until(ExpectedConditions.elementToBeClickable(Password));
-		Password.sendKeys(pass);
+		wait.until(ExpectedConditions.elementToBeClickable(username));
+		username.sendKeys(Username);
+		wait.until(ExpectedConditions.elementToBeClickable(password));
+		password.sendKeys(pass);
 	}
 
-	public void adminLogin() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
-		loginBtn.click();
-		wait.until(ExpectedConditions.elementToBeClickable(logOut));
-	}
+	public void adminLoginButton() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(loginbutton));
+		js.executeScript("arguments[0].click();", loginbutton);
+		}
 
 	public void AdminLogOut() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(logOut));
@@ -590,7 +594,7 @@ public class AdminLogin extends TestBase {
 	 * @return the userName
 	 */
 	public WebElement getUserName() {
-		return UserName;
+		return username;
 	}
 
 	public Boolean isDelayedDebitSelected() {
@@ -608,7 +612,7 @@ public class AdminLogin extends TestBase {
 	 * @return the password
 	 */
 	public WebElement getPassword() {
-		return Password;
+		return password;
 	}
 
 	/**
