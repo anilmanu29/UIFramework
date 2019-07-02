@@ -46,7 +46,7 @@ public class TestUtil extends TestBase {
 
 	public static String downloadsPath = System.getProperty(userHome) + "\\Downloads";
 
-	public static String basePath = "C:/AUTOMATION/SELENIUM/_Project/testing/SeleniumFramework/";
+	public static String basePath = "C:/AUTOMATION/SELENIUM/_Project/testing/RevolutFramework/";
 	public static String initialVideoFilePath = basePath + "testVideo.mkv";
 	public static String finalVideoFilePath = basePath + "ffmpeg_video_capture/videoFiles/";
 	public static String videoCaptureBinPath = basePath + "ffmpeg_video_capture/bin/record.bat";
@@ -63,7 +63,7 @@ public class TestUtil extends TestBase {
 	public Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
-			file = new FileInputStream(TestBase.loadPayTestDataFilePath);
+			file = new FileInputStream(TestBase.RevolutTestDataFilePath);
 		} catch (FileNotFoundException e) {
 			log.info(e);
 		}

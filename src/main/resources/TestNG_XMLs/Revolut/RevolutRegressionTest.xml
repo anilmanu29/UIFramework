@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Revolut Test Suite">
+
+  <listeners>
+   	<listener class-name = "extentreportlistener.ExtentReporterNG"/>
+   	<listener class-name = "testngcustomreportlistener.TestNGCustomReportListener"/>
+    <listener class-name = "util.TestRetryAnalyzerListener"/>
+  </listeners>
+
+	<test name="Revolut Automation Test" preserve-order="true">
+	    <classes>
+	         <class name="testcases.revolut.BankingLicenceTest"></class>
+	         <class name="testcases.revolut.ChangeCountryFlagTest"></class>
+	         <class name="testcases.revolut.keyboardShortcutsTest"></class>
+	    </classes>
+	</test> 
+</suite> 
